@@ -3,7 +3,6 @@ extern crate serde;
 use rand::rngs::OsRng;
 use secp256k1::{Secp256k1, SecretKey, PublicKey, Message, Signature};
 use std::str::FromStr;
-use serde::ser::Serialize;
 
 pub struct Keypair {
     public_key: PublicKey,
@@ -20,16 +19,6 @@ impl Keypair {
             secret_key: secret_key
         }
     }
-
-    // pub fn new_from_key(secret_key: String) -> Keypair {
-    //     let secp = Secp256k1::new();
-    //     let key = SecretKey::from_str(&secret_key).expect("failed to parse secret key");
-    //     let public_key = PublicKey::from_secret_key(&secp, &key);
-    //     Keypair {
-    //         public_key: public_key,
-    //         secret_key: key
-    //     }
-    // }
 
     pub fn new_from_slice(secret_key: &[u8]) -> Keypair {
         let secp = Secp256k1::new();

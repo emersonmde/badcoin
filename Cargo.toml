@@ -1,5 +1,5 @@
 [package]
-name = "tutorial"
+name = "badcoin"
 version = "0.1.0"
 authors = ["Matthew Emerson <emersonmde@protonmail.com>"]
 edition = "2018"

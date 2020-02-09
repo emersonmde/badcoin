@@ -23,6 +23,7 @@ impl Wallet {
         let public_key = self.keypair.export_public_key();
         let transaction = Transaction::create(to, &public_key, amount);
 
+        // let signature = self.keypair.sign(&transaction.as_hash()[0..32]);
         let a = SignedTransaction::create(transaction, &self.keypair);
         println!("{}", a);
 
