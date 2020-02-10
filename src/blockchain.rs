@@ -107,6 +107,10 @@ impl<'a> Blockchain {
     // This is slightly similar to how bitcoin uses a target to find a smaller hash
     // but seems much easier to implement. In the future it might be better to switch
     // back to a byte array and implement an increasing difficulty target.
+    //
+    // TODO: this was setup just to test mining transactions, need to slightly change
+    // this algorithm to take a set of unconfirmed transactions from the FullNode,
+    // mine the block, then broadcast the block and update the chain
     pub fn mine_block(&mut self, reward_address: &str) -> Result<(), &str> {
         let mut transactions: Vec<SignedTransaction> = Vec::new();
         // TODO: Replace with longest chain (aka highest id)
