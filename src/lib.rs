@@ -11,3 +11,6 @@
 pub mod blockchain;
 pub mod wallet;
 pub mod keypair;
+pub mod transaction;
+pub mod signed_transaction;
+pub mod block;
